@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CampusMart | University Supermarket</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 flex flex-col min-h-screen">
+    <nav class="bg-blue-600 p-4 text-white shadow-md">
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="index.html" class="text-2xl font-bold tracking-wide"
+          >🎓 CampusMart</a
+        >
+        <div class="space-x-6 font-medium">
+          <a href="index.html" class="hover:text-blue-200 transition">Home</a>
+          <a href="products.html" class="hover:text-blue-200 transition"
+            >Products</a
+          >
+          <a href="contact.html" class="hover:text-blue-200 transition"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <header
+      class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-16 text-center shadow-inner"
+    >
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-4">
+        Your One-Stop Campus Shop
+      </h1>
+      <p class="text-lg opacity-90 max-w-xl mx-auto px-4">
+        Get groceries, snacks, toiletries, and academic supplies right on campus
+        at student-friendly prices.
+      </p>
+
+      <div class="mt-8 max-w-md mx-auto px-4">
+        <form
+          action="index.html"
+          method="GET"
+          class="flex shadow-lg rounded-lg overflow-hidden"
+        >
+          <input
+            type="text"
+            name="search"
+            placeholder="Search for noodles, books, energy drinks..."
+            class="w-full px-4 py-3 text-gray-800 focus:outline-none"
+          />
+          <button
+            type="submit"
+            class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold px-6 transition"
+          >
+            Search
+          </button>
+        </form>
+      </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 flex-grow">
+      <div
+        id="search-output"
+        class="hidden mb-8 p-4 bg-yellow-50 border-l-4 border-yellow-500 rounded text-gray-700"
+      ></div>
+
+      <section class="text-center my-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-8">
+          Why Shop at CampusMart?
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100">
+            <div class="text-4xl mb-3">⚡</div>
+            <h3 class="text-xl font-bold mb-2 text-gray-800">
+              Close to Hostels
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Save time and energy. We are located right in the heart of the
+              university campus.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100">
+            <div class="text-4xl mb-3">💸</div>
+            <h3 class="text-xl font-bold mb-2 text-gray-800">
+              Student Discounts
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Show your student ID card at the counter to get exclusive price
+              slashes.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100">
+            <div class="text-4xl mb-3">🌙</div>
+            <h3 class="text-xl font-bold mb-2 text-gray-800">
+              Late Night Opening
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Studying for exams? We stay open late to keep your midnight snack
+              stash full.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="bg-gray-800 text-gray-400 py-6 text-center border-t border-gray-700 text-sm"
+    >
+      <p>&copy; 2026 CampusMart Supermarket. All Security Testing Allowed.</p>
+    </footer>
+
+    <!-- <script>
+      // Extract parameters from the URL query string
+      const urlParams = new URLSearchParams(window.location.search);
+      const searchQuery = urlParams.get("search");
+
+      if (searchQuery) {
+        const outputBox = document.getElementById("search-output");
+        outputBox.classList.remove("hidden");
+
+        /* VULNERABILITY NOTE: 
+               Using innerHTML to display user input without sanitization allows an attacker 
+               to execute malicious JavaScript scripts inside the browser context.
+            */
+        outputBox.innerHTML =
+          "Showing results for: <strong>" + searchQuery + "</strong>";
+      }
+    </script> -->
+  </body>
+</html>
